@@ -8,6 +8,8 @@ require("./config"); // --> require the db()
 const router = require("./routes");
 require("dotenv").config();
 
+const PORT = process.env.PORT | 5000;
+
 app.use(cors());
 app.use(compression());
 app.use(bodyparser.json());
@@ -15,6 +17,6 @@ app.use(morgan("tiny"));
 
 app.use("/api", router);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server listening on PORT ${process.env.PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server listening on PORT ${PORT}`);
 });

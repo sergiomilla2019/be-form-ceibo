@@ -114,7 +114,7 @@ export default function Checkout() {
         alert("Debe completar todos los campos para registrarse");
       } else {
         axios
-          .post(`http://localhost:3001/api/users/register`, {
+          .post(`https://be-form-ceibo-backend.vercel.app/api/users/register`, {
             firstName: firstName,
             lastName: lastName,
             mail: mail,
@@ -125,7 +125,7 @@ export default function Checkout() {
           })
           .then((res) => {
             axios
-              .post(`http://localhost:3001/api/notification`, {
+              .post(`https://be-form-ceibo-backend.vercel.app/api/notification`, {
                 firstName: firstName,
                 lastName: lastName,
                 mail: mail,
