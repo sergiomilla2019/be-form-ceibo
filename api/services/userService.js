@@ -11,9 +11,9 @@ class UsersService {
   }
 
   static async serviceResgisterUser(req) {
-    const { email } = req.body;
+    const { mail } = req.body;
     try {
-      let user = await User.findOne({ email });
+      let user = await User.findOne({ mail });
       if (user) {
         return { message: "alredy registered" };
       } else {
